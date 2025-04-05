@@ -3,6 +3,8 @@ name: Build & Release FlashShapes
 on:
   push:
     branches: [ "master" ]
+    tags:
+      - 'v1.0.1'
 
 jobs:
   build-windows:
@@ -59,11 +61,8 @@ jobs:
         run: brew install create-dmg
 
       - name: Create .dmg
-        run: |
-          create-dmg dist/flashshapes.app \
-            --volname "FlashShapes" \
-            --overwrite \
-            dist/flashshapes-macos.dmg
+        run: create-dmg dist/flashshapes.app --volname "FlashShapes" --overwrite dist/flashshapes-macos.dmg
+
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v1
