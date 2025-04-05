@@ -30,7 +30,7 @@ jobs:
           xcopy assets dist\\package\\assets\\ /E /I /Y
           powershell Compress-Archive -Path dist\\package\\* -DestinationPath dist\\flashshapes-windows.zip
 
-      - name: Upload to release
+      - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: dist/flashshapes-windows.zip
@@ -59,14 +59,13 @@ jobs:
         run: brew install create-dmg
 
       - name: Create .dmg
-        run: >
-          create-dmg dist/flashshapes.app
-          --volname "FlashShapes"
-          --volicon "assets/icons/icon.icns"
-          --overwrite
-          dist/flashshapes-macos.dmg
+        run: |
+          create-dmg dist/flashshapes.app \
+            --volname "FlashShapes" \
+            --overwrite \
+            dist/flashshapes-macos.dmg
 
-      - name: Upload to release
+      - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: dist/flashshapes-macos.dmg
