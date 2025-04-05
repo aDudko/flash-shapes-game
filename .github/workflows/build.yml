@@ -61,11 +61,11 @@ jobs:
         run: brew install create-dmg
 
       - name: Create .dmg
-        run: |
-          create-dmg dist/flashshapes.app \
-            --volname "FlashShapes" \
-            --volicon "assets/icons/icon.icns" \
-            dist/
+        run: >
+          create-dmg dist/flashshapes.app
+          --volname "FlashShapes"
+          --volicon "assets/icons/icon.icns"
+          dist/
 
       - name: Upload to release
         uses: softprops/action-gh-release@v1
