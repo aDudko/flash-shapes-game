@@ -15,7 +15,17 @@ INPUT_BG = (230, 230, 230)
 
 SHAPES = ['circle', 'diamond', 'oval', 'rectangle', 'square', 'triangle']
 CELL_SIZE = 100
-ASSETS_PATH = os.path.join("assets", "shapes")
+
+def resource_path(relative_path):
+    """ Получает путь к файлу """
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+ASSETS_PATH = resource_path(os.path.join("assets", "shapes"))
 
 # --- Window initialization (important before loading images) ---
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
