@@ -44,10 +44,16 @@ selected type.
 - `Python` v.3.12+
 - `pygame` v.2.6+
 
-Manual installation:
+## Manual installation:
 
 ```bash  
-pip install pygame  
+poetry install
+```
+
+## Run game:
+
+```bash
+poetry run python3 main.py
 ```  
 
 ---  
