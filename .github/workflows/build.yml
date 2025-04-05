@@ -3,8 +3,6 @@ name: Build & Release FlashShapes
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   build-windows:
@@ -65,7 +63,8 @@ jobs:
           create-dmg dist/flashshapes.app
           --volname "FlashShapes"
           --volicon "assets/icons/icon.icns"
-          dist/
+          --overwrite
+          dist/flashshapes-macos.dmg
 
       - name: Upload to release
         uses: softprops/action-gh-release@v1
