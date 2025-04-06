@@ -8,10 +8,10 @@ pygame.init()
 WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 600
 FONT = pygame.font.SysFont(None, 32)
-BG_COLOR = (229, 229, 229)
-FG_COLOR = (0, 0, 0)
+BG_COLOR = (30, 30, 30)
+FG_COLOR = (230, 230, 230)
 BUTTON_COLOR = (0, 128, 128)
-INPUT_BG = (230, 230, 230)
+INPUT_BG = (30, 30, 30)
 
 SHAPES = ['circle', 'diamond', 'oval', 'rectangle', 'square', 'triangle']
 CELL_SIZE = 100
